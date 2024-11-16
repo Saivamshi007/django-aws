@@ -13,6 +13,7 @@ def login(request):
         form = LoginForm(request,data=request.POST)
         if form.is_valid():
             user = authenticate(request, username=request.POST['username'],password=request.POST['password'])
+            print('sai')
             if user is not None:
                 auth.login(request,user)
                 return redirect('dashboard')
